@@ -9,7 +9,7 @@ export const Logo = () => {
             src="/img/xochiArtLogo.jpg"
             alt="Logo"
             height={100}
-            width={260}
+            width={200}
           />
         </div>
       </Link>
