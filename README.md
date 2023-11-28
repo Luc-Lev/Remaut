@@ -1,1 +1,1 @@
-Potfolio websbite for Roger Remaut using NextJs, Tailwind & Framer Motion.
+Potfolio website for Roger Remaut using NextJs, Tailwind & Framer Motion.
