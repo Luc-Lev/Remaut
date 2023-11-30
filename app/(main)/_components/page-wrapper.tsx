@@ -6,7 +6,7 @@ export const PageWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <AnimatePresence>
-            {children}
+        <div className="overflow-hidden">{children}</div>
       </AnimatePresence>
     </>
   );

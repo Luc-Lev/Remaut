@@ -40,7 +40,7 @@ export function Navbar2() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Home
               </NavigationMenuLink>
@@ -48,7 +48,7 @@ export function Navbar2() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <Link href="/about" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 About
               </NavigationMenuLink>
@@ -56,7 +56,9 @@ export function Navbar2() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
+          <Link href="/gallery" legacyBehavior passHref>
             <NavigationMenuTrigger className="pr-2">Gallery</NavigationMenuTrigger>
+            </Link>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-2 md:w-[500px]  lg:w-[600px] ">
                 {components.map((component) => (
@@ -73,7 +75,7 @@ export function Navbar2() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <Link href="/contact" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Contact
               </NavigationMenuLink>

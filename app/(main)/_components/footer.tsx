@@ -73,7 +73,7 @@ export const Footer = () => {
               Copyright © 2023 Xochi Art. All Rights Reserved.
             </div>
             <div className="px-4 w-full text-center sm:w-auto sm:text-left">
-              Made with ❤️ by Luc Levez.
+              Created by Luc Levez.
             </div>
           </div>
         </div>

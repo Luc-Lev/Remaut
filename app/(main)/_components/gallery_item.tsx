@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import img1 from "@/public/img/p7.jpg";
 import { motion } from "framer-motion";
 import { mainFont, titleFont } from "../_utils/font_utils";
 import { imageVariants } from "../_utils/framer_utils";
@@ -8,22 +7,13 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { ArtWorkProps } from "@/types/artWorkProps";
 
-interface GalleryItemProps {
-  title: string;
-  imageUrl: string;
-  dimensions: string;
-  materials: string;
-  year: string;
-}
-
-export const GalleryItem: React.FC<GalleryItemProps> = ({
-  title,
-  imageUrl,
-  dimensions,
-  materials,
-  year,
+export const GalleryItem: React.FC<ArtWorkProps> = ({
+  artwork
 }) => {
+  const artworkURL = `/artwork/${artwork.id}`;
+
   return (
     <motion.div
       initial="offscreen"
@@ -35,11 +25,11 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({
       {/*image section*/}
       <div className=" bg-white shadow-md border mx-auto">
         <div className="p-1">
-          <Link href="#">
+          <Link href={artworkURL}>
             <AspectRatio ratio={3 / 4}>
               <Image
                 className="object-cover"
-                src={imageUrl}
+                src={artwork.imageUrl}
                 loading="lazy"
                 alt="t"
                 fill
@@ -58,7 +48,7 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({
                 titleFont.className
               )}
             >
-              {title}
+              {artwork.title}
             </h5>
           </Link>
           <Separator />
@@ -68,7 +58,7 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({
               mainFont.className
             )}
           >
-            Dimensions: {dimensions}
+            Dimensions: {artwork.dimension}
           </p>
           <Separator />
           <p
@@ -77,7 +67,7 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({
               mainFont.className
             )}
           >
-            Materials: {materials}
+            Materials: {artwork.materials}
           </p>
           <Separator />
           <p
@@ -86,7 +76,7 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({
               mainFont.className
             )}
           >
-            Year: {year}
+            Year: {artwork.year}
           </p>
         </div>
       </div>
