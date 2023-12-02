@@ -36,12 +36,12 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Navbar2() {
   return (
-    <div className="hidden md:block">
+    <div className={cn("hidden md:block",mainFont.className)}>
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink className="font-bold {navigationMenuTriggerStyle()}">
                 Home
               </NavigationMenuLink>
             </Link>
@@ -49,7 +49,7 @@ export function Navbar2() {
 
           <NavigationMenuItem>
             <Link href="/about" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink className="font-bold {navigationMenuTriggerStyle()}">
                 About
               </NavigationMenuLink>
             </Link>
@@ -57,7 +57,7 @@ export function Navbar2() {
 
           <NavigationMenuItem>
           <Link href="/gallery" legacyBehavior passHref>
-            <NavigationMenuTrigger className="pr-2">Gallery</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="pr-2 font-bold text-base">Gallery</NavigationMenuTrigger>
             </Link>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-2 md:w-[500px]  lg:w-[600px] ">
@@ -76,7 +76,7 @@ export function Navbar2() {
 
           <NavigationMenuItem>
             <Link href="/contact" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink className="font-bold {navigationMenuTriggerStyle()}">
                 Contact
               </NavigationMenuLink>
             </Link>
