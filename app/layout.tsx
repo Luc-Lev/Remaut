@@ -2,11 +2,13 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Remaut',
   description: "Abstract Art Portfolio by Rogier Remaut",
+  metadataBase: new URL('https://xochi.art')
 }
 
 export default function RootLayout({

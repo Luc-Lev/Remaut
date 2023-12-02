@@ -21,8 +21,8 @@ import { Textarea } from "@/components/ui/textarea";
 
 export const EnquireForm = () => {
   return (
-    <div className="h-full mt-10">
-      <Card className="w-[320px]">
+    <div className="h-full mt-10 w-full flex justify-center">
+      <Card className="w-3/4">
         <CardHeader>
           <CardTitle>Enquire About</CardTitle>
           <CardDescription>
@@ -32,10 +32,6 @@ export const EnquireForm = () => {
         <CardContent>
           <form>
             <div className="grid w-full items-center gap-4">
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" placeholder="Name" />
-              </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="email">Email</Label>
                 <Input id="email" placeholder="Email" />

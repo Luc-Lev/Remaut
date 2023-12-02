@@ -12,7 +12,7 @@ import { ArtWorkProps } from "@/types/artWorkProps";
 export const GalleryItem: React.FC<ArtWorkProps> = ({
   artwork
 }) => {
-  const artworkURL = `/artwork/${artwork.id}`;
+  const artworkURL = `/artwork/${artwork.id}#artwork`;
 
   return (
     <motion.div

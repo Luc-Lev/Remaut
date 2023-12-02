@@ -11,6 +11,7 @@ import { titleFont } from "../../_utils/font_utils";
 import { cn } from "@/lib/utils";
 import { EnquireForm } from "../_components/enquire_form";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Button } from "@/components/ui/button";
 
 interface ArtworkPageProps {
   params: {
@@ -44,64 +45,69 @@ export default async function ArtWorkPage({
 }: ArtworkPageProps) {
   const artwork = await getArtwork(id);
   return (
-    <div className="lg:flex grid grid-cols-1 min-h-screen ">
-      <div className="bg-black lg:w-2/3 flex justify-center">
+    <div className="bg-black">
+      <div className="lg:flex grid grid-cols-1 min-h-screen bg-black" id="artowrk">
+        <div className="lg:w-2/3 flex justify-center">
           <Image
             src={artwork.imageUrl}
             alt="Artist"
-            height={800}
-            width={680}
-            className="object-scale-down mx-auto p-2 h-full "
+            height={700}
+            width={480}
+            className="object-scale-down mx-auto pt-4 lg:py-1 px-2 lg:px-1"
           />
-      </div>
-      <div className="bg-black text-white text-center lg:w-1/3 min-h-screen">
-        <div className="mx-auto w-3/4 mt-10 lg:mt-20">
-          <div className="">
+        </div>
+        <div className="text-white text-center lg:w-1/3 flex items-center">
+          <div className="mx-auto w-3/4">
             <div>
-              <Link href="#">
-                <h5
+              <div>
+                <Link href="#">
+                  <h5
+                    className={cn(
+                      "mt-4 mb-3 text-white text-4xl tracking-widest uppercase",
+                      titleFont.className
+                    )}
+                  >
+                    {artwork.title}
+                  </h5>
+                </Link>
+                <Separator className="w-3/4  mx-auto" />
+                <p
                   className={cn(
-                    "mt-4 mb-3 text-white text-4xl tracking-widest uppercase",
-                    titleFont.className
+                    " text-white text-xl break-all mt-2 mb-2",
+                    mainFont.className
                   )}
                 >
-                  {artwork.title}
-                </h5>
-              </Link>
-              <Separator className="w-3/4  mx-auto" />
-              <p
-                className={cn(
-                  " text-white text-xl break-all mt-2 mb-2",
-                  mainFont.className
-                )}
-              >
-                Dimensions: {artwork.dimension}
-              </p>
-              <Separator className="w-3/4  mx-auto" />
-              <p
-                className={cn(
-                  " text-white text-xl break-all mt-2 mb-2",
-                  mainFont.className
-                )}
-              >
-                Materials: {artwork.materials}
-              </p>
-              <Separator className="w-3/4 mx-auto" />
-              <p
-                className={cn(
-                  " text-white text-xl break-all mt-2 mb-2",
-                  mainFont.className
-                )}
-              >
-                Year: {artwork.year}
-              </p>
+                  Dimensions: {artwork.dimension}
+                </p>
+                <Separator className="w-3/4  mx-auto" />
+                <p
+                  className={cn(
+                    " text-white text-xl break-all mt-2 mb-2",
+                    mainFont.className
+                  )}
+                >
+                  Materials: {artwork.materials}
+                </p>
+                <Separator className="w-3/4 mx-auto" />
+                <p
+                  className={cn(
+                    " text-white text-xl break-all mt-2 mb-2",
+                    mainFont.className
+                  )}
+                >
+                  Year: {artwork.year}
+                </p>
+                <Link href="#enquire">
+                <Button variant="outline" size="lg" className="bg-black text-lg mt-10">Enquire About</Button>
+                </Link>
+              </div>
             </div>
           </div>
-          <div className="flex justify-center mt-10">
-           <EnquireForm/>
-          </div>
+        </div>
+        </div>
+        <div className="flex justify-center mt-10 pb-10 bg-black" id="enquire">
+          <EnquireForm/>
         </div>
       </div>
-    </div>
   );
 }
