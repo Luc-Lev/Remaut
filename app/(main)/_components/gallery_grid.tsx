@@ -12,7 +12,7 @@ interface GalleryProps {
 
 export const GalleryGrid: React.FC<GalleryProps> = ({ data }) => {
   return (
-    <div className="bg-black pt-6">
+    <div className="bg-black pt-6 pb-14">
       <motion.h1
         variants={fadeInFromLeft}
         initial="hidden"

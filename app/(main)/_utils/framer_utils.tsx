@@ -21,7 +21,7 @@ export const fadeInFromBottom = {
 
 export const imageVariants: Variants = {
     offscreen: {
-      y: 50,
+      y: 100,
       opacity: 0,
     },
   
@@ -29,7 +29,7 @@ export const imageVariants: Variants = {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 1.5,
+        duration: 1.4,
       },
     },
   };
