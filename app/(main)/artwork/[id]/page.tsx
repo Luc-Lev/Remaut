@@ -23,7 +23,6 @@ interface ArtworkPageProps {
 
 const getArtwork = cache(async (id: string) => {
   const artwork = await prisma?.artwork.findUnique({ where: { id } });
-
   if (!artwork) notFound();
   return artwork;
 });
@@ -46,6 +45,21 @@ export default async function ArtWorkPage({
   params: { id },
 }: ArtworkPageProps) {
   const artwork = await getArtwork(id);
+  const artworkIds = await prisma?.artwork.findMany({ select: { id: true } });
+  const currentIndex = artworkIds.findIndex(
+    (item) => item.id.toString() === id
+  );
+  const nextIndex = (currentIndex + 1) % artworkIds.length;
+  const prevIndex = (currentIndex - 1 + artworkIds.length) % artworkIds.length;
+
+  const nextArtwork = await prisma?.artwork.findUnique({
+    where: { id: artworkIds[nextIndex].id },
+  });
+
+  const prevArtwork = await prisma?.artwork.findUnique({
+    where: { id: artworkIds[prevIndex].id },
+  });
+
   return (
     <PageWrapper>
       <div className="bg-black">
@@ -63,13 +77,26 @@ export default async function ArtWorkPage({
             />
           </div>
           <div className="text-white text-center lg:w-1/3 flex items-center">
+
+
             <div className="mx-auto w-3/4">
+            <Link href={`/artwork/${prevArtwork?.id}`} className="lg:hidden absolute bottom-10 left-2">
+                      <Button variant="outline" size="sm"className="bg-black text-lg">
+                        <ChevronLeft size={24} strokeWidth={2}/>
+                      </Button>
+            </Link>
+            <Link href={`/artwork/${nextArtwork?.id}`} className="lg:hidden absolute bottom-10 right-2">
+            <Button variant="outline" size="sm" className="bg-black text-lg">
+                        <ChevronRight size={24} strokeWidth={2}/>
+                      </Button>
+            </Link>
+
               <div>
                 <div>
                   <Link href="#">
                     <h5
                       className={cn(
-                        "mt-1 lg:mt-4 mb-3 text-white text-3xl lg:text-4xl tracking-widest uppercase",
+                        "mt-4 lg:mt-4 mb-3 text-white text-3xl lg:text-4xl tracking-widest uppercase",
                         titleFont.className
                       )}
                     >
@@ -109,16 +136,16 @@ export default async function ArtWorkPage({
                       size="lg"
                       className="bg-black text-lg mt-2 lg:mt-10"
                     >
-                      Enquire About
+                      Enquire
                     </Button>
                   </Link>
-                  <div className="mt-52 flex justify-around">
-                    <Link href="/">
+                  <div className="hidden lg:mt-52 lg:flex lg:justify-around">
+                    <Link href={`/artwork/${prevArtwork?.id}`}>
                       <Button variant="outline" className="bg-black text-lg">
-                        <ChevronLeft size={24} strokeWidth={2} className="" /> Prev
+                        <ChevronLeft size={24} strokeWidth={2}/>Prev
                       </Button>
                     </Link>
-                    <Link href="/">
+                    <Link href={`/artwork/${nextArtwork?.id}`}>
                       <Button variant="outline" className="bg-black text-lg">
                         Next
                         <ChevronRight size={24} strokeWidth={2} />

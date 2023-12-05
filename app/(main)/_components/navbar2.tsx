@@ -19,45 +19,47 @@ import { featureFont, mainFont } from "../_utils/font_utils";
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Featured Work",
-    href: "/docs/primitives/alert-dialog",
+    href: "/gallery/featured",
     description: "A showcase of my most recent work.",
   },
   {
     title: "Material Art",
-    href: "/docs/primitives/hover-card",
+    href: "/gallery/material-art",
     description: "Textures and materials in abstract dimensions.",
   },
   {
     title: "Works on Paper",
-    href: "/docs/primitives/progress",
+    href: "/gallery/works-on-paper",
     description: "Abstract narratives on a paper canvas.",
   },
 ];
 
 export function Navbar2() {
   return (
-    <div className={cn("hidden md:block",mainFont.className)}>
+    <div className={cn("hidden md:block", mainFont.className)}>
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
-              <NavigationMenuLink className="font-bold {navigationMenuTriggerStyle()}">
-                Home
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <div className="font-bold text-base">Home</div>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
             <Link href="/about" legacyBehavior passHref>
-              <NavigationMenuLink className="font-bold {navigationMenuTriggerStyle()}">
-                About
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <div className="font-bold  text-base">About</div>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-          <Link href="/gallery" legacyBehavior passHref>
-            <NavigationMenuTrigger className="pr-2 font-bold text-base">Gallery</NavigationMenuTrigger>
+            <Link href="/gallery" legacyBehavior passHref>
+              <NavigationMenuTrigger className="pr-2 font-bold  text-base">
+                Gallery
+              </NavigationMenuTrigger>
             </Link>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-2 md:w-[500px]  lg:w-[600px] ">
@@ -76,8 +78,8 @@ export function Navbar2() {
 
           <NavigationMenuItem>
             <Link href="/contact" legacyBehavior passHref>
-              <NavigationMenuLink className="font-bold {navigationMenuTriggerStyle()}">
-                Contact
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <div className="font-bold  text-base">Contact</div>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
