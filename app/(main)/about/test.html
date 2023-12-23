@@ -1,0 +1,22 @@
+
+<div id="container">
+  <h1>Test form</h1>
+  <h4>Input your console data below :</h4>
+  <form action="" id="form" onsubmit="sConsole(event)">
+    <input type="text" name="name" id="name" />
+    <input type="text" name="number" id="number" />
+    <input type="text" name="email" id="email" />
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+  function sConsole(event) {
+    event.preventDefault();
+    var name = document.getElementById("name");
+    var number = document.getElementById("number");
+    var email = document.getElementById("email");
+    console.log("name: " + name.value + "\n" + "number: " + number.value + "\n" + "email: " + email.value);
+  }
+</script>

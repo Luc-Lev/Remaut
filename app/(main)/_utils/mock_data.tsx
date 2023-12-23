@@ -1,7 +1,7 @@
 export const mockData = [
     {
         title: "Untitled I",
-        imageUrl: "https://lh3.googleusercontent.com/pw/ADCreHd-9416YQMhDirqcWYcc6NMEMjlOlfMsHANdo60y8Nui5hSfPYH8U_yZWghBCxHWAXMN7uTzR1QupETxqo273NWyGNJwzw0bH71PIqwDCfy1jd9uXhru9Pdgeg-jNiXjjmd_jCzuKhw2UFMLGcskFblXCwlEygmy5Nfd0eRHyXmmY_GEddHl7qHQzLBqE9eCLxnWnUxIGE6VzU8YiCo9P0H3j9mlTDDyBp8ufryHsUHdBSjuymW2htzflokBtd0BnQ44TuMpKw44Khvx10s5ON-QZdWb337e5GVmrKa_ojZc-bPAf_E31Ju9DT8su_uheff9T5SA2CvSgjgrRqgEihhKNxwyTLJADozYWSY60eWi86mBme-inDNbKAwFGtUd6vg2Ckbm8uw0RsPj2bgC72qnqzQeXHBhM4L865R5NHjy15QzwTG3GrjLAKvYBsIDhjcRkhpchAbiqAZo5eoBoNWhEiJX2KSTg2QJmqtuOb88MVw54CIcWCTWKklfuP9RCFydvjPQtZmIg9fbu-xbGYfjbz1gw-unJEcBsSO6rV607KjaJx5kqX7cZB1ryHWCXr-OUvDVjQP-VnjPvW0IRP434PXJVYhSTErUU95dU5Yp6jtkWCLr4JR2JRP2p2XPjinCnpPNne6zf-oWamzDjuM_8HK2ErgPZFuvhDODGzmYyvlmY-EemVFgMemPT7_U4DnRmrFD4dX7Pb8KGflOW2LW7QNP4timua5L_n9wwfaE0JYXBukCLjBSwrtob4HQ9LvrmtLacxnG_rHQRDNHoKI9o0k5VhCiyz-uLa9VoKomWgv4ol-OVm-byr9phnkfAV9_q0LbNgNZc6G1VXKhb4YgPhsruiWbAtsOUY4ppfIReVDb_GrpxLyywdTiKKE-ViImWon-D5LgPwVQr4s6U6J9xMD5vNAAbhVXcOL3stm91lfaW7T0gQ96DbYvRfLCehmlr-B9qKq=w719-h955-s-no-gm?authuser=0",
+        imageUrl: "/img/p2.jpg",
         dimensions: "30 x 40 cm",
         materials: "Oil on Canvas",
         year: "2019",
